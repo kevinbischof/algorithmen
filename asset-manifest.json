@@ -1,25 +1,22 @@
 {
   "files": {
-    "main.css": "/algorithmen/static/css/main.a617e044.chunk.css",
-    "main.js": "/algorithmen/static/js/main.4060f0e3.chunk.js",
-    "main.js.map": "/algorithmen/static/js/main.4060f0e3.chunk.js.map",
-    "runtime-main.js": "/algorithmen/static/js/runtime-main.2b8848a4.js",
-    "runtime-main.js.map": "/algorithmen/static/js/runtime-main.2b8848a4.js.map",
-    "static/css/2.da1eef19.chunk.css": "/algorithmen/static/css/2.da1eef19.chunk.css",
-    "static/js/2.e53b7bf3.chunk.js": "/algorithmen/static/js/2.e53b7bf3.chunk.js",
-    "static/js/2.e53b7bf3.chunk.js.map": "/algorithmen/static/js/2.e53b7bf3.chunk.js.map",
-    "static/js/3.6d579cd1.chunk.js": "/algorithmen/static/js/3.6d579cd1.chunk.js",
-    "static/js/3.6d579cd1.chunk.js.map": "/algorithmen/static/js/3.6d579cd1.chunk.js.map",
+    "main.css": "/algorithmen/static/css/main.22741c9e.chunk.css",
+    "main.js": "/algorithmen/static/js/main.43ac65a9.chunk.js",
+    "main.js.map": "/algorithmen/static/js/main.43ac65a9.chunk.js.map",
+    "runtime-main.js": "/algorithmen/static/js/runtime-main.01f1e73d.js",
+    "runtime-main.js.map": "/algorithmen/static/js/runtime-main.01f1e73d.js.map",
+    "static/js/2.d703add2.chunk.js": "/algorithmen/static/js/2.d703add2.chunk.js",
+    "static/js/2.d703add2.chunk.js.map": "/algorithmen/static/js/2.d703add2.chunk.js.map",
+    "static/js/3.bddfa8c9.chunk.js": "/algorithmen/static/js/3.bddfa8c9.chunk.js",
+    "static/js/3.bddfa8c9.chunk.js.map": "/algorithmen/static/js/3.bddfa8c9.chunk.js.map",
     "index.html": "/algorithmen/index.html",
-    "static/css/2.da1eef19.chunk.css.map": "/algorithmen/static/css/2.da1eef19.chunk.css.map",
-    "static/css/main.a617e044.chunk.css.map": "/algorithmen/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.e53b7bf3.chunk.js.LICENSE.txt": "/algorithmen/static/js/2.e53b7bf3.chunk.js.LICENSE.txt"
+    "static/css/main.22741c9e.chunk.css.map": "/algorithmen/static/css/main.22741c9e.chunk.css.map",
+    "static/js/2.d703add2.chunk.js.LICENSE.txt": "/algorithmen/static/js/2.d703add2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2b8848a4.js",
-    "static/css/2.da1eef19.chunk.css",
-    "static/js/2.e53b7bf3.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.4060f0e3.chunk.js"
+    "static/js/runtime-main.01f1e73d.js",
+    "static/js/2.d703add2.chunk.js",
+    "static/css/main.22741c9e.chunk.css",
+    "static/js/main.43ac65a9.chunk.js"
   ]
 }
