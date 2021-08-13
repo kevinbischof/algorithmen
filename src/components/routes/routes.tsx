@@ -6,9 +6,7 @@ interface Link {
 
 export const routes: Link[] = [
   { id: 1, href: '/', name: 'Home' },
-  { id: 2, href: '/menu', name: 'Menu' },
-  { id: 3, href: '/about', name: 'About' },
-  { id: 4, href: '/contact', name: 'Contact' },
+  { id: 2, href: '/algorithms', name: 'Algorithmen' },
 ]
 
 export default routes

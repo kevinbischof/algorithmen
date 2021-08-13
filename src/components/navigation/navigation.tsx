@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { FaCode } from 'react-icons/all'
 import getIsMobile from '../../helpers/helper'
 import MobileNavigation from './navigationMobile'
 import routes from '../routes/routes'
@@ -17,11 +18,11 @@ export const Navigation = () => {
         <MobileNavigation isOpen={isOpen} toggle={toggle} />
       ) : (
         <div
-          className="flex justify-between items-center h-16 bg-white text-black relative shadow-sm font-mono"
+          className="flex justify-between items-center h-16 pl-4 mb-4 bg-gray-800 text-white relative shadow-sm"
           role="presentation"
         >
-          <Link to="/" className="pl-8">
-            Logo
+          <Link to="/">
+            <FaCode size={30} color="white" />
           </Link>
           <div className="pr-8 md:block">
             {routes.map((route) => {
