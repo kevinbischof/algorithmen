@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaCode } from 'react-icons/all'
 import getIsMobile from '../../helpers/helper'
 import MobileNavigation from './navigationMobile'
-import routes from '../routes/routes'
+import routes from '../../routes/routes'
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)

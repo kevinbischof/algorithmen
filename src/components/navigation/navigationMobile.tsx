@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/all'
-import routes from '../routes/routes'
 import NavLinkStyled, { NavLinkListStyled } from './navigation.styles'
+import routes from '../../routes/routes'
 
 interface NavigationMobileProps {
   isOpen: boolean

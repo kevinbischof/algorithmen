@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Navigation from './components/navigation/navigation'
 import Home from './components/home/home'
-import AlgorithmsOverview from './components/algorithms/algorithms-overview'
+import routes from './routes/routes'
 
 function App() {
   return (
@@ -13,7 +13,9 @@ function App() {
           <Navigation />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/algorithms" component={AlgorithmsOverview} />
+            {routes.map((route) => {
+              return <Route key={route.id} path={route.href} component={route.component} />
+            })}
           </Switch>
         </div>
       </Router>
