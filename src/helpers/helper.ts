@@ -23,4 +23,13 @@ export const getIsMobile = (): boolean => {
   return width < breakpoints.md
 }
 
+/*
+ReferenceError: Cannot access 'routes' before initialization
+
+export function getHrefByRouteName(name: string): string {
+  const result = routes.find((route) => route.name === name)
+  return result ? result.href : ''
+}
+ */
+
 export default getIsMobile
