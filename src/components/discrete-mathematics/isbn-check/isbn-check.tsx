@@ -1,13 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useFetch } from 'react-async'
 import Title from '../../styles/title'
 import Input from '../../styles/input'
 import ButtonSkins from '../../styles/button'
-import { GoogleBook } from './isbn-check.types'
 import Book from './partial/isbn-check.book'
-
-const reducer = (previousValue: number, currentValue: number) => previousValue + currentValue
+import { reducer } from '../../../helpers/helper'
 
 const ButtonStyled = styled.button`
   margin-top: 15px;
@@ -32,6 +29,36 @@ function checkIsbn(isbn: string): boolean {
   return gewichteteSumme % 11 === 0
 }
 
+function createCalculationWay(isbn: string): React.ReactElement[] {
+  const array: React.ReactElement[] = []
+  const step1 = <div>1. Gewichtete Summe S bestimmen</div>
+  const step2 = <div>S = 10*a1 + 9*a2 + 8*a3 + 7*a4 + 6*a5 + 5*a6 + 4*a7 + 3*a8 + 2*a9 + 1*a10</div>
+
+  const positions = isbn.split('')
+  const multiplicators = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+  const singleMultiplicans: any[] = []
+  positions.forEach((position, index) => {
+    singleMultiplicans.push(multiplicators[index] * Number(position))
+  })
+  const step3 = (
+    <div>
+      S ={' '}
+      {multiplicators.map((multiplicator, index) => {
+        if (index === 9) return `${multiplicator}*${positions[index]}`
+        return `${multiplicator}*${positions[index]} + `
+      })}
+    </div>
+  )
+  const gewichteteSumme = singleMultiplicans.reduce(reducer)
+  const step4 = <div>S = {singleMultiplicans.join(' + ')}</div>
+  const step5 = <div>S = {gewichteteSumme}</div>
+  const step6 = <div>2. Prüfen, ob S ohne Rest durch 11 Teilbar ist </div>
+  const step7 = <div>S % 11 {gewichteteSumme % 11 === 0 ? '=' : '!='} 0</div>
+
+  array.push(step1, step2, step3, step4, step5, step6, step7)
+  return array
+}
+
 export const IsbnCheck = () => {
   const [value, setValue] = useState('')
   const [isbn, setIsbn] = useState('')
@@ -54,11 +81,12 @@ export const IsbnCheck = () => {
       >
         Submit
       </ButtonStyled>
+      {isbn && createCalculationWay(isbn)}
       <br />
       {isbn && (
         <div>
           ISBN: {isbn} ist {isbnResult ? 'korrekt' : 'falsch'}
-          <Book isbn={isbn} />
+          {isbnResult && <Book isbn={isbn} />}
         </div>
       )}
     </IsbnCheckContainer>

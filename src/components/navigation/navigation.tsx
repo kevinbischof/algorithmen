@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaCode } from 'react-icons/all'
 import getIsMobile from '../../helpers/helper'
 import MobileNavigation from './navigationMobile'
-import routes from '../../routes/routes'
+import routes, { basePath } from '../../routes/routes'
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,7 +21,7 @@ export const Navigation = () => {
           className="flex justify-between items-center h-16 pl-4 mb-4 bg-gray-800 text-white relative shadow-sm"
           role="presentation"
         >
-          <Link to="/">
+          <Link to={basePath}>
             <FaCode size={30} color="white" />
           </Link>
           <div className="pr-8 md:block">

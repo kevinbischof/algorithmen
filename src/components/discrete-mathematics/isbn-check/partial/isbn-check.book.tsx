@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useFetch } from 'react-async'
 import styled from 'styled-components'
 import { GoogleBook } from '../isbn-check.types'
@@ -17,7 +17,7 @@ const Cover = styled.div``
 
 export function Book({ isbn }: BookProps): React.ReactElement {
   const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}`
-  const { data, error } = useFetch(url, {
+  const { data } = useFetch(url, {
     headers: { accept: 'application/json' },
   })
   const copy: GoogleBook = data as GoogleBook
@@ -28,10 +28,8 @@ export function Book({ isbn }: BookProps): React.ReactElement {
   let thumbnail = null
   if (cover) {
     const copyCover = cover as any
-    console.log(copyCover)
     if (copyCover[isbn]) {
       thumbnail = copyCover[isbn].thumbnail_url.replace('-S', '-L')
-      console.log(thumbnail)
     }
   } else {
     thumbnail = null
@@ -46,7 +44,7 @@ export function Book({ isbn }: BookProps): React.ReactElement {
             <div>Untertitel: {copy.items[0].volumeInfo.subtitle}</div>
             <div>Autoren: {copy.items[0].volumeInfo.authors}</div>
             <div>Veröffentlicht: {copy.items[0].volumeInfo.publishedDate}</div>
-            {copy.items[0].volumeInfo.industryIdentifiers?.map((item, index) => {
+            {copy.items[0].volumeInfo.industryIdentifiers?.map((item) => {
               return (
                 <div key={item.type}>
                   {item.type}: {item.identifier}

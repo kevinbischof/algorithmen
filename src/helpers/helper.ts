@@ -23,6 +23,8 @@ export const getIsMobile = (): boolean => {
   return width < breakpoints.md
 }
 
+export const reducer = (previousValue: number, currentValue: number) => previousValue + currentValue
+
 /*
 ReferenceError: Cannot access 'routes' before initialization
 
